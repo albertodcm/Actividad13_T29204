@@ -11,15 +11,8 @@ declare let $: any;
 })
 export class AppComponent implements OnInit {
 
-
   title = 'Notas';
-
   Notas = [];
-  // Titulos = [];
-  // notas = [];
-  // Titulo = '';
-  // Texto = '';
-
   prueba = '';
 
   constructor() {}
@@ -27,7 +20,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     $('.collapsible').collapsible();
   }
-
 
   nota(Titulo: HTMLInputElement, Texto: HTMLInputElement) {
     if (Titulo.value === '') {
@@ -37,13 +29,6 @@ export class AppComponent implements OnInit {
     } else {
       const crearNota = new Nota(Titulo.value, Texto.value);
       this.Notas.unshift(crearNota);
-
-
-      // console.log(Titulo.value);
-      // this.Titulo = Titulo.value;
-      // this.notas.unshift(Texto);
-
-
     }
   }
 }
@@ -55,6 +40,5 @@ class Nota {
     this.titulo = Titulo;
     this.texto = Texto;
   }
-
 }
 
